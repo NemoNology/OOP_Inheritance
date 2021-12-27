@@ -8,21 +8,24 @@
 using namespace std;
 
 
+// Bankovskiy A.S.
+
+// Constuctor without input elements
 ADT_Notebook::ADT_Notebook() {
 
-    ADT_Notebook::Number_of_Sheets = 0;
+    this->Number_of_Sheets = 0;
 
-    ADT_Notebook::Size_of_Page = 5;
+    this->Size_of_Page = 5;
 
-    ADT_Notebook::Paper_Material = Paper_M::EAC;
+    this->Paper_Material = Paper_M::EAC;
 
 }
 
 
 
 
-// Массив для возвращения строки с материалом бумаги
-string Paper_Materials[sizeof(ADT_Notebook::Paper_M)] = { "ГОСТ", "Не ГОСТ" };
+// ГЊГ Г±Г±ГЁГў Г¤Г«Гї ГўГ®Г§ГўГ°Г Г№ГҐГ­ГЁГї Г±ГІГ°Г®ГЄГЁ Г± Г¬Г ГІГҐГ°ГЁГ Г«Г®Г¬ ГЎГіГ¬Г ГЈГЁ
+string Paper_Materials[sizeof(ADT_Notebook::Paper_M)] = { "ГѓГЋГ‘Г’", "ГЌГҐ ГѓГЋГ‘Г’" };
 
 
 
@@ -30,12 +33,12 @@ string Paper_Materials[sizeof(ADT_Notebook::Paper_M)] = { "ГОСТ", "Не ГОСТ" };
 
 
 
-// Set Кол-во листов
+// Set ГЉГ®Г«-ГўГ® Г«ГЁГ±ГІГ®Гў
 void ADT_Notebook::Set_Number_of_Sheets(const unsigned short& n) {
 
     if (n == 0) {
 
-        throw invalid_argument("Нулевое значение...");  // Ошибочка вышла
+        throw invalid_argument("ГЌГіГ«ГҐГўГ®ГҐ Г§Г­Г Г·ГҐГ­ГЁГҐ...");  // ГЋГёГЁГЎГ®Г·ГЄГ  ГўГ»ГёГ«Г 
 
     }
     else
@@ -48,19 +51,19 @@ void ADT_Notebook::Set_Number_of_Sheets(const unsigned short& n) {
 }
 
 
-// Set Материал бумаги\листов
+// Set ГЊГ ГІГҐГ°ГЁГ Г« ГЎГіГ¬Г ГЈГЁ\Г«ГЁГ±ГІГ®Гў
 void ADT_Notebook::Set_Paper_material(const ADT_Notebook::Paper_M& m) {
 
     this->Paper_Material = m;
 
 }
 
-// Set Размер страницы
+// Set ГђГ Г§Г¬ГҐГ° Г±ГІГ°Г Г­ГЁГ¶Г»
 void ADT_Notebook::Set_Size_of_Page(const unsigned short& s) {
 
     if (s == 0) {
 
-        throw invalid_argument("Нулевой размер?..");    // Ошибочка вышла
+        throw invalid_argument("ГЌГіГ«ГҐГўГ®Г© Г°Г Г§Г¬ГҐГ°?..");    // ГЋГёГЁГЎГ®Г·ГЄГ  ГўГ»ГёГ«Г 
 
     }
     else {
@@ -76,7 +79,7 @@ void ADT_Notebook::Set_Size_of_Page(const unsigned short& s) {
 
 
 
-// Get Кол-во листов
+// Get ГЉГ®Г«-ГўГ® Г«ГЁГ±ГІГ®Гў
 unsigned short ADT_Notebook::Get_Number_of_Sheets() const {
 
     return this->Number_of_Sheets;
@@ -84,14 +87,14 @@ unsigned short ADT_Notebook::Get_Number_of_Sheets() const {
 }
 
 
-// Get Материал бумаги\листов
+// Get ГЊГ ГІГҐГ°ГЁГ Г« ГЎГіГ¬Г ГЈГЁ\Г«ГЁГ±ГІГ®Гў
 ADT_Notebook::Paper_M ADT_Notebook::Get_Paper_Material() const {
 
     return this->Paper_Material;
 
 }
 
-// Get Размер страницы
+// Get ГђГ Г§Г¬ГҐГ° Г±ГІГ°Г Г­ГЁГ¶Г»
 unsigned short ADT_Notebook::Get_Size_of_Page() const {
 
     return this->Size_of_Page;
@@ -104,7 +107,7 @@ unsigned short ADT_Notebook::Get_Size_of_Page() const {
 
 
 
-// Get string Кол-во листов
+// Get string ГЉГ®Г«-ГўГ® Г«ГЁГ±ГІГ®Гў
 string ADT_Notebook::Get_string_Number_of_Sheets() const {
 
     return to_string(this->Number_of_Sheets);
@@ -113,7 +116,7 @@ string ADT_Notebook::Get_string_Number_of_Sheets() const {
 
 
 
-// Get string Материал бумаги\листов
+// Get string ГЊГ ГІГҐГ°ГЁГ Г« ГЎГіГ¬Г ГЈГЁ\Г«ГЁГ±ГІГ®Гў
 string ADT_Notebook::Get_string_Paper_Material() const {
 
     return Paper_Materials[this->Paper_Material];
@@ -122,25 +125,25 @@ string ADT_Notebook::Get_string_Paper_Material() const {
 
 
 
-// Get Размер страницы
+// Get ГђГ Г§Г¬ГҐГ° Г±ГІГ°Г Г­ГЁГ¶Г»
 string ADT_Notebook::Get_string_Size_of_Page() const {
 
     return "A" + to_string(this->Size_of_Page);
 
 }
 
-// Get string инфу обо всей тетради 
+// Get string ГЁГ­ГґГі Г®ГЎГ® ГўГ±ГҐГ© ГІГҐГІГ°Г Г¤ГЁ 
 string ADT_Notebook::Get_All_Information() const {
 
-    return "Кол-во листов:\t" + ADT_Notebook::Get_string_Number_of_Sheets() +
-        "\tМатериал бумаги:\t" + ADT_Notebook::Get_string_Paper_Material() + "\tРазмер страницы:\t" +
+    return "ГЉГ®Г«-ГўГ® Г«ГЁГ±ГІГ®Гў:\t" + ADT_Notebook::Get_string_Number_of_Sheets() +
+        "\tГЊГ ГІГҐГ°ГЁГ Г« ГЎГіГ¬Г ГЈГЁ:\t" + ADT_Notebook::Get_string_Paper_Material() + "\tГђГ Г§Г¬ГҐГ° Г±ГІГ°Г Г­ГЁГ¶Г»:\t" +
         ADT_Notebook::Get_string_Size_of_Page();
 
 }
 
 
 
-
+// Constuctor with input elements
 ADT_Notebook::ADT_Notebook(unsigned short N_o_S, Paper_M P_M, unsigned short Size) {
 
 	ADT_Notebook::Set_Number_of_Sheets(N_o_S);
