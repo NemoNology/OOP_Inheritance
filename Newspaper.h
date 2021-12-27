@@ -7,6 +7,8 @@
 using namespace std;
 
 
+// Bankovskiy A.S.
+
 
 class Newspaper : public ADT_Notebook
 {
@@ -14,12 +16,14 @@ class Newspaper : public ADT_Notebook
 
 private:
 
-	string Publisher;
+	string Publisher;				// Newspaper's publisher
 
-	string Date;
+	string Date;					// Publication date
 
 public:
 
+
+	// Constuctor without input elements
 	Newspaper() {
 
 		this->Publisher = "Unknown";
@@ -87,15 +91,15 @@ public:
 	//	Getters (string):
 
 
-
+	// Get line with all information about newspaper
 	string Get_All_Information() {
 
-		return "Издатель:\t" + Get_Publisher() + "\tДата выхода:\t" + Get_Date() + "\t" + ADT_Notebook::Get_All_Information();
+		return "Г€Г§Г¤Г ГІГҐГ«Гј:\t" + Get_Publisher() + "\tГ„Г ГІГ  ГўГ»ГµГ®Г¤Г :\t" + Get_Date() + "\t" + ADT_Notebook::Get_All_Information();
 
 	}
 
 
-
+	// Constuctor without input elements
 	Newspaper(string P, string D, unsigned short N_o_S, Paper_M P_M, unsigned short Size) {
 
 		Set_Publisher(P);
