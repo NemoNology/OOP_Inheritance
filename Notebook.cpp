@@ -1,7 +1,14 @@
 #include "Notebook.h"
 
+// Bankovskiy A.S.
 
-// Конструктор без входных данных
+
+
+string Markup_Types[sizeof(Notebook::Markup_T)] = { "Г‚ ГЄГ«ГҐГІГЄГі", "Г‚ Г«ГЁГ­ГЁГѕ", "ГЃГҐГ§ Г°Г Г§Г¬ГҐГІГЄГЁ", "Г„Г°ГіГЈГ Гї" };
+
+
+
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГўГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ
 Notebook::Notebook() {
 
     Notebook::Markup_Type = Markup_T::Without_Markup;
@@ -10,7 +17,7 @@ Notebook::Notebook() {
 
 
 
-string Markup_Types[sizeof(Notebook::Markup_T)] = { "В клетку", "В линию", "Без разметки", "Другая" };
+
 
 
 
@@ -19,7 +26,7 @@ string Markup_Types[sizeof(Notebook::Markup_T)] = { "В клетку", "В линию", "Без 
 
 
 
-// Set Тип разметки
+// Set Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
 void Notebook::Set_Markup_Type(Markup_T t) {
 
     this->Markup_Type = t;
@@ -27,13 +34,13 @@ void Notebook::Set_Markup_Type(Markup_T t) {
 }
 
 
-// Set Производитель
+// Set ГЏГ°Г®ГЁГ§ГўГ®Г¤ГЁГІГҐГ«Гј
 void Notebook::Set_Manufacturer(const string& m) {
 
-    // При вводе ничего, не меняем 
+    // ГЏГ°ГЁ ГўГўГ®Г¤ГҐ Г­ГЁГ·ГҐГЈГ®, Г­ГҐ Г¬ГҐГ­ГїГҐГ¬ 
     if (m == "") {
 
-        throw invalid_argument("Пусто...");             // Ошибочка вышла
+        throw invalid_argument("ГЏГіГ±ГІГ®...");             // ГЋГёГЁГЎГ®Г·ГЄГ  ГўГ»ГёГ«Г 
 
     }
     else {
@@ -49,7 +56,7 @@ void Notebook::Set_Manufacturer(const string& m) {
 
 
 
-// Get Тип разметки
+// Get Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
 Notebook::Markup_T Notebook::Get_Markup_Type() const {
 
     return this->Markup_Type;
@@ -58,7 +65,7 @@ Notebook::Markup_T Notebook::Get_Markup_Type() const {
 
 
 
-// Get Производитель
+// Get ГЏГ°Г®ГЁГ§ГўГ®Г¤ГЁГІГҐГ«Гј
 string Notebook::Get_Manufacturer() const {
 
     return this->Manufacturer;
@@ -71,7 +78,7 @@ string Notebook::Get_Manufacturer() const {
 
 
 
-// Get string Тип разметки
+// Get string Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
 string Notebook::Get_string_Markup_Type() const {
 
 
@@ -82,14 +89,14 @@ string Notebook::Get_string_Markup_Type() const {
 
 
 
-// Get string инфу обо всей тетради 
+// Get string ГЁГ­ГґГі Г®ГЎГ® ГўГ±ГҐГ© ГІГҐГІГ°Г Г¤ГЁ 
 string Notebook::Get_All_Information() const {
 
-    return "Тип разметки:\t" + Get_string_Markup_Type() + "\tИзготовитель:\t" + Get_Manufacturer() + "\t" + ADT_Notebook::Get_All_Information();
+    return "Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ:\t" + Get_string_Markup_Type() + "\tГ€Г§ГЈГ®ГІГ®ГўГЁГІГҐГ«Гј:\t" + Get_Manufacturer() + "\t" + ADT_Notebook::Get_All_Information();
 
 }
 
-// Конструктор с входными данными
+// ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГўГµГ®Г¤Г­Г»Г¬ГЁ Г¤Г Г­Г­Г»Г¬ГЁ
 Notebook::Notebook(Markup_T M_T, string Man, unsigned short N_o_S, Paper_M P_M, unsigned short Size) {
 
     Set_Markup_Type(M_T);
