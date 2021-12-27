@@ -2,31 +2,36 @@
 #include "ADT_Notebook.h"
 
 
+// Bankovskiy A.S.
+
+
 class Notebook : public ADT_Notebook
 {
 
-public:                 // Создание множеств для класса Notebook
+public:                 // Г‘Г®Г§Г¤Г Г­ГЁГҐ Г¬Г­Г®Г¦ГҐГ±ГІГў Г¤Г«Гї ГЄГ«Г Г±Г±Г  Notebook
 
 
-// Тип разметки
+// Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
     enum Markup_T {
 
-        Checkered,              // В клетку
-        In_Line,                // В линию  
-        Without_Markup,         // Без разметки
-        Another                 // Другой
+        Checkered,              // Г‚ ГЄГ«ГҐГІГЄГі
+        In_Line,                // Г‚ Г«ГЁГ­ГЁГѕ  
+        Without_Markup,         // ГЃГҐГ§ Г°Г Г§Г¬ГҐГІГЄГЁ
+        Another                 // Г„Г°ГіГЈГ®Г©
 
     };
 
-private:                // Поля класса
+private:                // ГЏГ®Г«Гї ГЄГ«Г Г±Г±Г 
 
-    Markup_T Markup_Type;                   // Тип разметки
+    Markup_T Markup_Type;                   // Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
 
-    string Manufacturer;                    // Производитель
+    string Manufacturer;                    // ГЏГ°Г®ГЁГ§ГўГ®Г¤ГЁГІГҐГ«Гј
 
-public:                 // Методы класса
+public:                 // ГЊГҐГІГ®Г¤Г» ГЄГ«Г Г±Г±Г 
 
-// Конструктор без входных данных
+
+
+    // ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЎГҐГ§ ГўГµГ®Г¤Г­Г»Гµ Г¤Г Г­Г­Г»Гµ
     Notebook();
 
 
@@ -35,12 +40,12 @@ public:                 // Методы класса
 
 
 
-    // Set Тип разметки
+    // Set Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
     void Set_Markup_Type(Markup_T t);
 
 
 
-    // Set Производитель
+    // Set ГЏГ°Г®ГЁГ§ГўГ®Г¤ГЁГІГҐГ«Гј
     void Set_Manufacturer(const string& m);
 
     
@@ -50,12 +55,12 @@ public:                 // Методы класса
 
 
 
-    // Get Тип разметки
+    // Get Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
     Markup_T Get_Markup_Type() const;
 
 
 
-    // Get Производитель
+    // Get ГЏГ°Г®ГЁГ§ГўГ®Г¤ГЁГІГҐГ«Гј
     string Get_Manufacturer() const;
 
 
@@ -64,15 +69,15 @@ public:                 // Методы класса
 
 
 
-    // Get string Тип разметки
+    // Get string Г’ГЁГЇ Г°Г Г§Г¬ГҐГІГЄГЁ
     string Get_string_Markup_Type() const;
 
 
-    // Get string инфу обо всей тетради 
+    // Get string ГЁГ­ГґГі Г®ГЎГ® ГўГ±ГҐГ© ГІГҐГІГ°Г Г¤ГЁ 
     string Get_All_Information() const;
 
 
-    // Конструктор с входными данными
+    // ГЉГ®Г­Г±ГІГ°ГіГЄГІГ®Г° Г± ГўГµГ®Г¤Г­Г»Г¬ГЁ Г¤Г Г­Г­Г»Г¬ГЁ
     Notebook(Markup_T M_T, string Man, unsigned short N_o_S, Paper_M P_M, unsigned short Size);
 
 };
