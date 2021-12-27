@@ -4,21 +4,26 @@
 #include "ADT_Notebook.h"
 
 
+// Bankovskiy A.S.
+
+
+// Class Book
 class Book : public ADT_Notebook
 {
 
 private:
 
-	string Author;
+	string Author;				// Book's author 
 
-	string Date;
-
-	string Name;
+	string Date;				// Book's date
+		
+	string Title;				// Book's title	
 
 
 public:
 
 
+	// Constructor without input elements
 	Book() {
 
 		this->Author = "Unknown";
@@ -35,12 +40,12 @@ public:
 
 	//	Setters:
 
-
+		
 	void Set_Author(const string& s) {
 
 		if (s == "") {
 
-			throw invalid_argument("Empty...");			// Ошибочка вышла...
+			throw invalid_argument("Empty...");			// ГЋГёГЁГЎГ®Г·ГЄГ  ГўГ»ГёГ«Г ...
 
 		}
 		else {
@@ -56,7 +61,7 @@ public:
 
 		if (s == "") {
 
-			throw invalid_argument("Empty...");			// Ошибочка вышла...
+			throw invalid_argument("Empty...");			// ГЋГёГЁГЎГ®Г·ГЄГ  ГўГ»ГёГ«Г ...
 
 		}
 		else {
@@ -72,7 +77,7 @@ public:
 
 		if (s == "") {
 
-			throw invalid_argument("Empty...");			// Ошибочка вышла...
+			throw invalid_argument("Empty...");			// ГЋГёГЁГЎГ®Г·ГЄГ  ГўГ»ГёГ«Г ...
 
 		}
 		else {
@@ -114,16 +119,16 @@ public:
 	//	Getters (string):
 
 
-
+	// Get line with all information about book
 	string Get_All_Information() {
 
-		return "Автор:\t" + Get_Author() + "\tДата выхода/завершения:\t" + Get_Date() + "\tНаименование:\t" + Get_Name() + "\t" + ADT_Notebook::Get_All_Information();
+		return "ГЂГўГІГ®Г°:\t" + Get_Author() + "\tГ„Г ГІГ  ГўГ»ГµГ®Г¤Г /Г§Г ГўГҐГ°ГёГҐГ­ГЁГї:\t" + Get_Date() + "\tГЌГ ГЁГ¬ГҐГ­Г®ГўГ Г­ГЁГҐ:\t" + Get_Name() + "\t" + ADT_Notebook::Get_All_Information();
 
 	}
 
 
 
-	// Конструктор с входными данными
+	// Constructor with input elements
 	Book(string A, string D, string N, unsigned short N_o_S, Paper_M P_M, unsigned short Size) {
 
 		Set_Author(A);
